@@ -89,17 +89,13 @@ function CatalogContent() {
   const getCategoryTheme = (cat: string) => {
     switch (cat) {
       case CATEGORIES.DETERGENT:
-        return "bg-blue-500/10 text-blue-600 dark:text-blue-450 border-blue-500/20";
       case CATEGORIES.PETROLEUM:
-        return "bg-indigo-500/10 text-indigo-600 dark:text-indigo-455 border-indigo-500/20";
       case CATEGORIES.INORGANIC:
-        return "bg-emerald-500/10 text-emerald-600 dark:text-emerald-450 border-emerald-500/20";
       case CATEGORIES.PIGMENTS:
-        return "bg-amber-500/10 text-amber-600 dark:text-amber-450 border-amber-500/20";
       case CATEGORIES.FINE:
-        return "bg-rose-500/10 text-rose-600 dark:text-rose-450 border-rose-500/20";
+        return "bg-[#E9F2FF] text-[#0A3663] border-[#A7C7F0]";
       default:
-        return "bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-500/20";
+        return "bg-slate-100 text-slate-700 border-slate-200";
     }
   };
 
@@ -124,10 +120,10 @@ function CatalogContent() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 font-sans">
       {/* Title Header */}
       <div className="space-y-4 max-w-3xl mb-12">
-        <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        <h1 className="text-4xl font-extrabold tracking-tight text-[#1E293B] sm:text-5xl">
           Katalog Bahan Kimia Industri
         </h1>
-        <p className="text-base text-gray-550 dark:text-gray-400 leading-relaxed">
+        <p className="text-base text-slate-600 leading-relaxed">
           Temukan bahan baku kimia bermutu tinggi untuk kebutuhan manufaktur Anda. Cari produk dengan spesifikasi detail, unduh lembar data teknis, dan minta penawaran langsung.
         </p>
       </div>
@@ -135,15 +131,15 @@ function CatalogContent() {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* SIDEBAR FILTERS (DESKTOP) */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-gray-50 dark:bg-gray-900 p-6.5 rounded-3xl border border-gray-150/40 dark:border-gray-800 space-y-6">
-            <div className="flex items-center justify-between pb-3 border-b border-gray-200/50 dark:border-gray-800">
-              <span className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                <Filter className="w-4.5 h-4.5 text-blue-500" />
+          <div className="bg-white p-6.5 rounded-2xl border border-[#E2E8F0] space-y-6">
+            <div className="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+              <span className="font-bold text-[#1E293B] flex items-center gap-2">
+                <Filter className="w-4.5 h-4.5 text-[#0A3663]" />
                 <span>Filter Pencarian</span>
               </span>
               <button
                 onClick={handleResetFilters}
-                className="text-xs font-semibold text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 transition-colors"
+                className="text-xs font-semibold text-slate-600 hover:text-[#0A3663] flex items-center gap-1 transition-colors"
                 title="Reset semua filter"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
@@ -153,7 +149,7 @@ function CatalogContent() {
 
             {/* Keyword Search */}
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+              <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wide">
                 Nama / Rumus Kimia
               </label>
               <div className="relative">
@@ -165,15 +161,15 @@ function CatalogContent() {
                     setSearchQuery(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 dark:text-white placeholder-gray-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0A3663]/20 focus:border-[#0A3663] transition-all text-[#1E293B] placeholder-slate-400"
                 />
-                <Search className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
+                <Search className="absolute left-3.5 top-3.5 w-4 h-4 text-slate-400" />
               </div>
             </div>
 
             {/* CAS Number Search */}
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+              <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wide">
                 Nomor CAS
               </label>
               <div className="relative">
@@ -185,15 +181,15 @@ function CatalogContent() {
                     setCasQuery(e.target.value);
                     setCurrentPage(1);
                   }}
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-gray-900 dark:text-white placeholder-gray-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0A3663]/20 focus:border-[#0A3663] transition-all text-[#1E293B] placeholder-slate-400"
                 />
-                <Hash className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
+                <Hash className="absolute left-3.5 top-3.5 w-4 h-4 text-slate-400" />
               </div>
             </div>
 
             {/* Category selection list */}
             <div className="space-y-3">
-              <label className="text-xs font-extrabold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
+              <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wide">
                 Kategori Industri
               </label>
               <div className="flex flex-col gap-1.5">
@@ -201,8 +197,8 @@ function CatalogContent() {
                   onClick={() => handleCategoryChange("All")}
                   className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                     selectedCategory === "All"
-                      ? "bg-blue-600 text-white shadow-md shadow-blue-500/10"
-                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-150/50 dark:hover:bg-gray-800"
+                      ? "bg-[#0A3663] text-white shadow-md shadow-[#0A3663]/10"
+                      : "text-slate-700 hover:bg-[#E9F2FF]"
                   }`}
                 >
                   Semua Produk ({products.length})
@@ -215,8 +211,8 @@ function CatalogContent() {
                       onClick={() => handleCategoryChange(cat)}
                       className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all leading-snug ${
                         selectedCategory === cat
-                          ? "bg-blue-600 text-white shadow-md shadow-blue-500/10"
-                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-150/50 dark:hover:bg-gray-800"
+                          ? "bg-[#0A3663] text-white shadow-md shadow-[#0A3663]/10"
+                          : "text-slate-700 hover:bg-[#E9F2FF]"
                       }`}
                     >
                       {cat} ({count})
@@ -231,12 +227,12 @@ function CatalogContent() {
         {/* PRODUCT CARDS LIST GRID */}
         <div className="lg:col-span-3 space-y-10">
           {/* Active status & result count */}
-          <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-450 border-b border-gray-100 dark:border-gray-850 pb-4">
-            <span className="font-semibold">
+          <div className="flex items-center justify-between text-sm text-slate-600 border-b border-[#E2E8F0] pb-4">
+            <span className="font-semibold text-[#1E293B]">
               Menampilkan {filteredProducts.length} dari {products.length} Bahan Kimia
             </span>
             {selectedCategory !== "All" && (
-              <span className="hidden sm:inline-block bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 text-xs px-3 py-1 rounded-full font-bold">
+              <span className="hidden sm:inline-block bg-[#E9F2FF] text-[#0A3663] text-xs px-3 py-1 rounded-full font-bold">
                 Kategori: {selectedCategory}
               </span>
             )}
@@ -254,12 +250,12 @@ function CatalogContent() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.2 }}
-                    className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-150/40 dark:border-gray-800 shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                    className="bg-white rounded-3xl border border-[#E2E8F0] shadow-sm flex flex-col justify-between overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     {/* Upper decorative banner card */}
                     <div className="p-6 pb-0">
                       {/* Stylized Chemical Visual or Product Photo */}
-                      <div className="h-32 w-full rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900 border border-gray-100 dark:border-gray-800/80 flex items-center justify-center relative overflow-hidden group-hover:bg-gradient-to-br group-hover:from-blue-50 group-hover:to-indigo-50 dark:group-hover:from-blue-955 dark:group-hover:to-indigo-955 transition-all">
+                      <div className="h-32 w-full rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center relative overflow-hidden transition-all">
                         {product.image ? (
                           <img
                             src={product.image}
@@ -274,7 +270,7 @@ function CatalogContent() {
                               {getAbstractSymbol(product.category)}
                             </span>
                             {/* Abstract grid wires */}
-                            <div className="absolute inset-0 opacity-5 dark:opacity-10 text-gray-500 dark:text-gray-300 grid grid-cols-6 gap-2 p-3 pointer-events-none">
+                            <div className="absolute inset-0 opacity-10 text-[#0A3663] grid grid-cols-6 gap-2 p-3 pointer-events-none">
                               {Array.from({ length: 24 }).map((_, i) => (
                                 <span key={i} className="border border-current rounded-full" />
                               ))}
@@ -292,52 +288,52 @@ function CatalogContent() {
                             {product.category.split(" ")[0]}
                           </span>
                           {product.chemicalFormula && (
-                            <span className="bg-gray-100 dark:bg-gray-800 text-gray-650 dark:text-gray-300 text-[10px] font-bold font-mono px-2 py-1 rounded-full border border-gray-200/40 dark:border-gray-700/50">
+                            <span className="bg-[#F8FAFC] text-slate-700 text-[10px] font-bold font-mono px-2 py-1 rounded-full border border-[#E2E8F0]">
                               {product.chemicalFormula}
                             </span>
                           )}
                         </div>
 
                         {/* Product Title */}
-                        <h3 className="text-base font-extrabold text-gray-900 dark:text-white leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        <h3 className="text-base font-extrabold text-[#0A3663] leading-snug group-hover:text-[#00A896] transition-colors">
                           {product.name}
                         </h3>
 
                         {/* CAS Number Copyable badge */}
                         <div className="flex items-center space-x-1.5">
-                          <span className="text-xxs font-bold text-gray-400 uppercase">CAS No:</span>
+                          <span className="text-xxs font-bold text-slate-400 uppercase">CAS No:</span>
                           <button
                             onClick={() => handleCopyCas(product.id, product.casNumber)}
-                            className="inline-flex items-center space-x-1 bg-gray-55 hover:bg-gray-100 dark:bg-gray-800/80 dark:hover:bg-gray-750 px-2 py-1 rounded-lg border border-gray-150/40 dark:border-gray-700/60 text-xxs font-bold text-gray-650 dark:text-gray-300 active:scale-95 transition-all"
+                            className="inline-flex items-center space-x-1 bg-[#F8FAFC] hover:bg-[#E9F2FF] px-2 py-1 rounded-lg border border-[#E2E8F0] text-xxs font-bold text-slate-700 active:scale-95 transition-all"
                             title="Salin Nomor CAS ke papan klip"
                           >
                             <span>{product.casNumber}</span>
                             {copiedId === product.id ? (
-                              <Check className="w-3 h-3 text-emerald-500 shrink-0" />
+                              <Check className="w-3 h-3 text-[#00A896] shrink-0" />
                             ) : (
-                              <Clipboard className="w-3 h-3 text-gray-400 shrink-0" />
+                              <Clipboard className="w-3 h-3 text-slate-400 shrink-0" />
                             )}
                           </button>
                         </div>
 
                         {/* Short description */}
-                        <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-450 line-clamp-3">
+                        <p className="text-xs leading-relaxed text-slate-600 line-clamp-3">
                           {product.shortDescription}
                         </p>
                       </div>
 
                       {/* CTA Buttons */}
-                      <div className="grid grid-cols-2 gap-3.5 pt-4 border-t border-gray-105 dark:border-gray-800/60 mt-auto">
+                      <div className="grid grid-cols-2 gap-3.5 pt-4 border-t border-[#E2E8F0] mt-auto">
                         <Link
                           href={`/katalog/${product.id}`}
-                          className="px-3 py-2.5 rounded-xl text-xs font-extrabold border border-gray-200 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800 text-center flex items-center justify-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-950 dark:hover:text-white transition-all active:scale-98"
+                          className="px-3 py-2.5 rounded-xl text-xs font-extrabold border border-[#E2E8F0] hover:bg-[#E9F2FF] text-center flex items-center justify-center space-x-1 text-[#1E293B] hover:text-[#0A3663] transition-all active:scale-98"
                         >
                           <Eye className="w-3.5 h-3.5" />
                           <span>Spesifikasi</span>
                         </Link>
                         <Link
                           href={`/kontak?type=quote&product=${encodeURIComponent(product.name)}`}
-                          className="px-3 py-2.5 rounded-xl text-xs font-extrabold text-white bg-blue-600 hover:bg-blue-700 text-center flex items-center justify-center space-x-1 shadow-md shadow-blue-500/10 active:scale-98 transition-all"
+                          className="px-3 py-2.5 rounded-xl text-xs font-extrabold text-white bg-[#0A3663] hover:bg-[#082a4b] text-center flex items-center justify-center space-x-1 shadow-md shadow-[#0A3663]/10 active:scale-98 transition-all"
                         >
                           <MessageSquare className="w-3.5 h-3.5" />
                           <span>Minta Harga</span>
@@ -350,17 +346,17 @@ function CatalogContent() {
             </div>
           ) : (
             /* Empty State */
-            <div className="bg-gray-50 dark:bg-gray-900 border border-dashed border-gray-200 dark:border-gray-800 p-16 rounded-3xl text-center flex flex-col items-center justify-center space-y-4">
+            <div className="bg-[#F8FAFC] border border-dashed border-[#CBD5E1] p-16 rounded-2xl text-center flex flex-col items-center justify-center space-y-4">
               <span className="text-4xl">🔍</span>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+              <h3 className="text-lg font-bold text-[#1E293B]">
                 Bahan Kimia Tidak Ditemukan
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 max-w-sm">
+              <p className="text-sm text-slate-600 max-w-sm">
                 Maaf, tidak ada produk kimia yang cocok dengan filter pencarian atau nomor CAS Anda. Harap periksa ejaan atau reset filter.
               </p>
               <button
                 onClick={handleResetFilters}
-                className="py-2.5 px-5 bg-blue-650 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow-md transition-colors"
+                className="py-2.5 px-5 bg-[#0A3663] hover:bg-[#082a4b] text-white font-bold text-xs rounded-xl shadow-md transition-colors"
               >
                 Reset Semua Pencarian
               </button>
@@ -373,7 +369,7 @@ function CatalogContent() {
               <button
                 onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
                 disabled={currentPage === 1}
-                className="px-3.5 py-2 rounded-xl text-xs font-extrabold border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-850 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                className="px-3.5 py-2 rounded-xl text-xs font-extrabold border border-[#E2E8F0] hover:bg-[#E9F2FF] disabled:opacity-40 disabled:pointer-events-none transition-colors"
               >
                 Sebelumnya
               </button>
@@ -383,8 +379,8 @@ function CatalogContent() {
                   onClick={() => handlePageChange(i + 1)}
                   className={`w-9.5 h-9.5 rounded-xl text-xs font-bold transition-all ${
                     currentPage === i + 1
-                      ? "bg-blue-650 text-white font-extrabold shadow-md shadow-blue-500/10"
-                      : "border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-850"
+                      ? "bg-[#0A3663] text-white font-extrabold shadow-md shadow-[#0A3663]/10"
+                      : "border border-[#E2E8F0] hover:bg-[#E9F2FF]"
                   }`}
                 >
                   {i + 1}
@@ -393,7 +389,7 @@ function CatalogContent() {
               <button
                 onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="px-3.5 py-2 rounded-xl text-xs font-extrabold border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-850 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                className="px-3.5 py-2 rounded-xl text-xs font-extrabold border border-[#E2E8F0] hover:bg-[#E9F2FF] disabled:opacity-40 disabled:pointer-events-none transition-colors"
               >
                 Selanjutnya
               </button>
@@ -409,8 +405,8 @@ export default function Catalog() {
   return (
     <Suspense fallback={
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-        <div className="w-12 h-12 border-4 border-blue-650 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-550 dark:text-gray-400 font-semibold">Memuat katalog produk kimia...</p>
+        <div className="w-12 h-12 border-4 border-[#0A3663] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-slate-600 font-semibold">Memuat katalog produk kimia...</p>
       </div>
     }>
       <CatalogContent />

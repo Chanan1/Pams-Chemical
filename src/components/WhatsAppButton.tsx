@@ -53,23 +53,23 @@ export default function WhatsAppButton() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="mb-3 mr-1 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-150 p-4.5 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 max-w-64 md:max-w-72 flex flex-col gap-1.5 relative"
+            className="mb-3 mr-1 bg-white text-[#1E293B] p-4.5 rounded-2xl shadow-2xl border border-[#E2E8F0] max-w-64 md:max-w-72 flex flex-col gap-1.5 relative"
           >
             {/* Close Button */}
             <button
               onClick={() => setShowTooltip(false)}
-              className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors"
+              className="absolute top-2 right-2 text-slate-500 hover:text-slate-700 transition-colors"
               aria-label="Dismiss message"
             >
               <X className="w-4 h-4" />
             </button>
             <div className="flex items-center space-x-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-bold text-emerald-500 uppercase tracking-wider">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00A896] animate-pulse" />
+              <span className="text-xs font-bold" style={{ color: '#00A896' }}>
                 Sales Online
               </span>
             </div>
-            <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 leading-snug">
+            <p className="text-sm font-semibold text-[#1E293B] leading-snug">
               Ada kebutuhan bahan baku kimia? Dapatkan penawaran cepat langsung dari tim sales kami via WhatsApp.
             </p>
             <button
@@ -77,7 +77,7 @@ export default function WhatsAppButton() {
                 setShowTooltip(false);
                 handleWhatsAppClick();
               }}
-              className="mt-1.5 py-1.5 px-3 rounded-lg text-xs font-bold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors text-center w-full shadow-sm shadow-emerald-500/25"
+              className="mt-1.5 py-1.5 px-3 rounded-lg text-xs font-bold text-white bg-[#00A896] hover:bg-[#008f78] transition-colors text-center w-full shadow-sm" 
             >
               Chat Sekarang
             </button>
@@ -95,15 +95,15 @@ export default function WhatsAppButton() {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleWhatsAppClick}
-            className="w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:bg-emerald-600 transition-colors duration-200 relative group"
+            className="w-14 h-14 rounded-full bg-[#00A896] text-white flex items-center justify-center shadow-xl hover:bg-[#008f78] transition-colors duration-200 relative group"
             aria-label="Chat on WhatsApp"
           >
             {/* Pulse Indicator Rings */}
-            <span className="absolute inset-0 rounded-full bg-emerald-500/20 animate-ping duration-1000 pointer-events-none" />
+            <span className="absolute inset-0 rounded-full bg-[#00A896]/20 animate-ping duration-1000 pointer-events-none" />
             <MessageSquare className="w-6.5 h-6.5" />
             
             {/* Quick Badge */}
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-red-500 border-2 border-white dark:border-gray-950 flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-red-500 border-2 border-white flex items-center justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-white" />
             </span>
           </motion.button>
