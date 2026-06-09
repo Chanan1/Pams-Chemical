@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/_next/",
     },
-    sitemap: "https://pamschemical.com/sitemap.xml",
+    sitemap: "https://pimakimagro.com/sitemap.xml",
   };
 }
