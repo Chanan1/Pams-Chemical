@@ -84,7 +84,7 @@ export default function AboutUs() {
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#0A3663] bg-[#E9F2FF] border border-[#A7C7F0] px-3.5 py-1.5 rounded-full">
-            Tentang Pams Chemical
+            Tentang Pima Kimagro
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1E293B]">
             Kredibilitas, Stabilitas & Integritas Suplai
@@ -104,7 +104,7 @@ export default function AboutUs() {
               Pionir Distribusi Bahan Kimia Industri & Kosmetik
             </h2>
             <p className="text-sm leading-relaxed text-slate-600">
-              <strong className="text-[#1E293B] font-bold">Pams Chemical</strong> (Divisi Distribusi FOOD & CHEMICAL) adalah distributor, importir, supplier, dan reseller terpercaya untuk bahan baku kimia industri berskala nasional. Kami bangga melayani berbagai sektor manufaktur penting, termasuk produsen deterjen pembersih, industri kosmetik kecantikan, pengolahan makanan, farmasi obat-obatan, hingga pengolahan air bersih perkotaan.
+              <strong className="text-[#1E293B] font-bold">Pima Kimagro Sejahtera</strong> (Divisi Distribusi FOOD & CHEMICAL) adalah distributor, importir, supplier, dan reseller terpercaya untuk bahan baku kimia industri berskala nasional. Kami bangga melayani berbagai sektor manufaktur penting, termasuk produsen deterjen pembersih, industri kosmetik kecantikan, pengolahan makanan, farmasi obat-obatan, hingga pengolahan air bersih perkotaan.
             </p>
             <p className="text-sm leading-relaxed text-slate-600">
               Dengan gudang penyimpanan modern berstandar keamanan tinggi dan sistem logistik mandiri, kami menjamin kemurnian bahan kimia murni (fine chemicals), surfaktan, senyawa anorganik, serta aditif petroleum tetap terjaga sempurna hingga sampai di fasilitas produksi Anda.
@@ -209,7 +209,7 @@ export default function AboutUs() {
             Nilai Perusahaan
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1E293B]">
-            Nilai Inti (Core Values) Pams Chemical
+            Nilai Inti (Core Values) Pima Kimagro Sejahtera
           </h2>
           <p className="text-sm text-slate-600">
             Nilai-nilai dasar yang dipegang teguh oleh seluruh tim sales expert, chemist, dan logistics kami dalam melayani Anda.
@@ -257,7 +257,7 @@ export default function AboutUs() {
               </p>
               <div className="pt-4">
                 <span className="text-xs text-slate-500 italic">
-                  Pams Chemical - Partner Tepercaya Rantai Pasok Anda.
+                  Pima Kimagro Sejahtera - Partner Tepercaya Rantai Pasok Anda.
                 </span>
               </div>
             </div>

@@ -44,15 +44,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 rounded-lg bg-[#0A3663] flex items-center justify-center text-white shadow-md shadow-[#0A3663]/20 group-hover:scale-105 transition-transform duration-200">
-              <Beaker className="w-5.5 h-5.5" />
-            </div>
+            <img
+              src="/Logo/Logo.png"
+              alt="Pima Kimagro Logo"
+              className="w-10 h-10 rounded-lg object-cover shadow-md shadow-[#0A3663]/20 group-hover:scale-105 transition-transform duration-200"
+            />
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tight text-[#1E293B] leading-none">
-                Pams Chemical
+                Pima Kimagro
               </span>
               <span className="text-xxs text-[#0A3663] font-semibold tracking-wider uppercase mt-1">
-                Industrial Raw Materials
+                Pima Kimagro Sejahtera
               </span>
             </div>
           </Link>

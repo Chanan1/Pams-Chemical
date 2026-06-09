@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${product.name} | CAS ${product.casNumber} - Pams Chemical`,
-    description: `Beli ${product.name} (CAS ${product.casNumber}) berkualitas tinggi dari Pams Chemical. Spesifikasi teknis: ${product.shortDescription}`,
+    title: `${product.name} | CAS ${product.casNumber} - Pima Kimagro`,
+    description: `Beli ${product.name} (CAS ${product.casNumber}) berkualitas tinggi dari Pima Kimagro Sejahtera. Spesifikasi teknis: ${product.shortDescription}`,
     keywords: [
       product.name,
       `CAS ${product.casNumber}`,
@@ -128,7 +128,7 @@ export default async function ProductDetail({ params }: PageProps) {
               <div className="grid grid-cols-1 gap-3 pt-2">
                 {/* Simulated dynamic datasheet viewer links */}
                 <a
-                  href={`https://wa.me/6281234567890?text=Halo%20Pams%20Chemical%2C%20saya%2520ingin%2520meminta%2520dokumen%2520TDS%2520untuk%2520${encodeURIComponent(product.name)}`}
+                  href={`https://wa.me/6283809704439?text=Halo%20Pima%20Kimagro%20Sejahtera%2C%20saya%2520ingin%2520meminta%2520dokumen%2520TDS%2520untuk%2520${encodeURIComponent(product.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-[#E2E8F0] hover:border-[#0A3663] font-semibold text-xs text-slate-700 hover:text-[#0A3663] transition-colors shadow-sm group"
@@ -141,7 +141,7 @@ export default async function ProductDetail({ params }: PageProps) {
                 </a>
                 
                 <a
-                  href={`https://wa.me/6281234567890?text=Halo%20Pams%20Chemical%2C%20saya%2520ingin%2520meminta%2520dokumen%2520MSDS%2520untuk%2520${encodeURIComponent(product.name)}`}
+                  href={`https://wa.me/6283809704439?text=Halo%20Pima%20Kimagro%20Sejahtera%2C%20saya%2520ingin%2520meminta%2520dokumen%2520MSDS%2520untuk%2520${encodeURIComponent(product.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-3.5 rounded-xl bg-white border border-[#E2E8F0] hover:border-red-500 font-semibold text-xs text-slate-700 hover:text-red-500 transition-colors shadow-sm group"

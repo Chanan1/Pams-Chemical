@@ -36,9 +36,9 @@ export default function WhatsAppButton() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "6281234567890";
+    const phoneNumber = "6289615205771";
     const text = encodeURIComponent(
-      "Halo Pams Chemical, saya tertarik untuk meminta penawaran harga bahan baku kimia industri. Mohon info pricelist dan katalog terbaru. Terima kasih."
+      "Halo Pima Kimagro Sejahtera, saya tertarik untuk meminta penawaran harga bahan baku kimia industri. Mohon info pricelist dan katalog terbaru. Terima kasih."
     );
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
   };

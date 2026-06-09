@@ -18,12 +18,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pams Chemical - Trusted Chemical Distributor & Industrial Raw Material Supplier",
-    template: "%s | Pams Chemical"
+    default: "Pima Kimagro Sejahtera - Trusted Chemical Distributor & Industrial Raw Material Supplier",
+    template: "%s | Pima Kimagro"
   },
-  description: "Pams Chemical adalah distributor, importir, supplier, dan reseller terpercaya untuk bahan baku kimia industri, surfactants, bahan deterjen, kosmetik, kimia anorganik, dan fine chemicals.",
+  description: "Pima Kimagro Sejahtera adalah distributor, importir, supplier, dan reseller terpercaya untuk bahan baku kimia industri, surfactants, bahan deterjen, kosmetik, kimia anorganik, dan fine chemicals.",
   keywords: [
-    "Pams Chemical",
+    "Pima Kimagro",
+    "Pima Kimagro Sejahtera",
     "Distributor Kimia Industri",
     "Bahan Baku Sabun Deterjen",
     "Bahan Kosmetik Skincare",
@@ -36,10 +37,10 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   openGraph: {
-    title: "Pams Chemical - Distributor Bahan Kimia Industri & Kosmetik",
-    description: "Pams Chemical menyediakan produk kimia berkualitas tinggi bersertifikasi internasional dengan rantai pasok terpercaya dan harga kompetitif.",
+    title: "Pima Kimagro Sejahtera - Distributor Bahan Kimia Industri & Kosmetik",
+    description: "Pima Kimagro Sejahtera menyediakan produk kimia berkualitas tinggi bersertifikasi internasional dengan rantai pasok terpercaya dan harga kompetitif.",
     url: "https://pamschemical.com",
-    siteName: "Pams Chemical",
+    siteName: "Pima Kimagro",
     locale: "id_ID",
     type: "website"
   },

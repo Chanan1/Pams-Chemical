@@ -63,8 +63,8 @@ export default function QuoteForm({ productName }: { productName: string }) {
       setShowSuccess(true);
 
       // Structure beautiful WhatsApp text
-      const waNumber = "6281234567890";
-      const message = `Halo Pams Chemical (Sales Center),
+      const waNumber = "6283809704439";
+      const message = `Halo Pima Kimagro Sejahtera (Sales Center),
 
 Saya ingin mengajukan Permintaan Penawaran Harga resmi. Berikut detail kebutuhan bahan baku industri kami:
 
@@ -254,7 +254,7 @@ Mohon untuk segera mengirimkan Surat Penawaran Harga (SPH) resmi beserta sertifi
                 <span>Inquiry Berhasil Dibuat!</span>
               </h4>
               <p className="text-xs text-slate-600 max-w-sm leading-relaxed">
-                Terima kasih, data penawaran Anda telah tersimpan dengan aman di sistem B2B Pams Chemical.
+                Terima kasih, data penawaran Anda telah tersimpan dengan aman di sistem B2B Pima Kimagro Sejahtera.
               </p>
             </div>
             <p className="text-xxs font-bold text-[#0A3663] bg-[#E9F2FF] border border-[#A7C7F0] px-3 py-1.5 rounded-lg animate-pulse">

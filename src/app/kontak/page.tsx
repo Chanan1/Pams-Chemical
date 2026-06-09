@@ -99,7 +99,7 @@ function ContactFormContent() {
         technical: "Konsultasi Teknis & Sampel"
       };
 
-      const message = `Halo Pams Chemical (Sales Center),
+      const message = `Halo Pima Kimagro Sejahtera (Sales Center),
 
 Saya ingin mengirimkan Inquiry Hubungi Kontak. Berikut rinciannya:
 
@@ -150,7 +150,7 @@ Mohon dapat dihubungi kembali via email atau WhatsApp sesegera mungkin. Terima k
                 <div className="space-y-1">
                   <h4 className="font-bold text-sm text-[#1E293B]">Alamat Kantor</h4>
                   <p className="text-xs leading-relaxed text-slate-600">
-                    Grand Slipi Tower Lt. 36, Kav. 22-24, Jl. Letjen S. Parman, Slipi, Jakarta Barat, 11480, Indonesia
+                    Sidotopo, Menanggal, Kec. Mojosari, Kabupaten Mojokerto, Jawa Timur 61382
                   </p>
                 </div>
               </div>
@@ -161,12 +161,12 @@ Mohon dapat dihubungi kembali via email atau WhatsApp sesegera mungkin. Terima k
                 <div className="space-y-1">
                   <h4 className="font-bold text-sm text-[#1E293B]">Telepon Kantor</h4>
                   <p className="text-xs text-slate-600">
-                    +62 21 5366 1234
+                    +62 896-1520-5771
                   </p>
                   <p className="text-xs font-bold flex items-center space-x-1 mt-1">
                     <MessageSquare className="w-3.5 h-3.5" />
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: '#00A896' }}>
-                      +62 812-3456-7890 (WhatsApp Sales)
+                    <a href="https://wa.me/6283809704439" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: '#00A896' }}>
+                      +62 838-0970-4439 (WhatsApp Sales)
                     </a>
                   </p>
                 </div>
@@ -178,8 +178,8 @@ Mohon dapat dihubungi kembali via email atau WhatsApp sesegera mungkin. Terima k
                 <div className="space-y-1">
                   <h4 className="font-bold text-sm text-[#1E293B]">Email Procurement</h4>
                   <p className="text-xs text-slate-600">
-                    <a href="mailto:info@pamschemical.com" className="hover:text-[#0A3663] hover:underline">
-                      info@pamschemical.com
+                    <a href="mailto:pimakimagrosejahtera@gmail.com" className="hover:text-[#0A3663] hover:underline">
+                      pimakimagrosejahtera@gmail.com
                     </a>
                   </p>
                 </div>
@@ -204,8 +204,8 @@ Mohon dapat dihubungi kembali via email atau WhatsApp sesegera mungkin. Terima k
           {/* Styled Google Maps iframe integration */}
           <div className="rounded-3xl border border-[#E2E8F0] overflow-hidden shadow-inner aspect-video relative max-w-md bg-[#F8FAFC]">
             <iframe
-              title="Pams Chemical Office Location Grand Slipi Tower"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4526367375217!2d106.79708977587786!3d-6.203867660769931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1m3!1d0!2d-6.20386766!3d106.7970898!2m2!1f0!2f0!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+              title="Pima Kimagro Office Location"
+              src="https://maps.google.com/maps?q=Sidotopo%2C+Menanggal%2C+Kec.+Mojosari%2C+Kabupaten+Mojokerto%2C+Jawa+Timur+61382&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
