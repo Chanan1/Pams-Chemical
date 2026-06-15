@@ -39,8 +39,10 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${product.name} | CAS ${product.casNumber} - Pima Kimagro`,
-    description: `Beli ${product.name} (CAS ${product.casNumber}) berkualitas tinggi dari Pima Kimagro Sejahtera. Spesifikasi teknis: ${product.shortDescription}`,
+    title: product.seoMetaTitle || `${product.name} | CAS ${product.casNumber} - Pima Kimagro`,
+    description:
+      product.seoMetaDescription ||
+      `Beli ${product.name} (CAS ${product.casNumber}) berkualitas tinggi dari Pima Kimagro Sejahtera. Spesifikasi teknis: ${product.shortDescription}`,
     keywords: [
       product.name,
       `CAS ${product.casNumber}`,
@@ -222,6 +224,32 @@ export default async function ProductDetail({ params }: PageProps) {
                 </table>
               </div>
             </div>
+
+            {product.extraDetails && Object.keys(product.extraDetails).length > 0 && (
+              <div className="space-y-4">
+                <h3 className="text-sm font-bold text-slate-600 uppercase tracking-wide flex items-center gap-2">
+                  <Table className="w-4 h-4 text-[#0A3663]" />
+                  <span>Detail Produk Tambahan</span>
+                </h3>
+
+                <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] shadow-sm">
+                  <table className="min-w-full divide-y divide-gray-100 text-sm">
+                    <tbody className="divide-y divide-gray-100 bg-white">
+                      {Object.entries(product.extraDetails).map(([label, value]) => (
+                        <tr key={label} className="grid grid-cols-12">
+                          <td className="col-span-4 px-4 py-3 bg-[#F8FAFC] text-xs font-bold text-slate-600 uppercase tracking-wider">
+                            {label}
+                          </td>
+                          <td className="col-span-8 px-4 py-3 text-[#1E293B] font-semibold">
+                            {Array.isArray(value) ? value.join(", ") : value}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
 
             {/* Industrial Applications Section */}
             <div className="space-y-4">

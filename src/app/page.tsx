@@ -378,18 +378,18 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Armada Distribusi Tangki Mandiri",
-                  desc: "Armada tangki pengiriman terdedikasi menjamin ketepatan waktu pengiriman bahan kimia curah (bulk) dengan kepatuhan standar safety yang ketat.",
+                  title: "Sistem Pengiriman & Logistik Terpadu",
+                  desc: "Didukung oleh manajemen logistik mandiri yang memastikan distribusi bahan kimia curah (bulk) maupun retail tiba tepat waktu dengan standar keamanan transportasi yang ketat.",
                   img: "/images/delivery_tanks.png"
                 },
                 {
-                  title: "Laboratorium QC Presisi Tinggi",
-                  desc: "Setiap batch produk melalui inspeksi laboratorium QC untuk memastikan parameter purity, active matter, dan kesesuaian spesifikasi COA.",
+                  title: "Jaminan Sertifikasi & Dokumen Mutu",
+                  desc: "Setiap produk dijamin oleh dokumen resmi yang lengkap, mulai dari Certificate of Analysis (COA), MSDS, hingga Letter of Authorization (LoA) langsung dari produsen global.",
                   img: "/images/quality_lab.png"
                 },
                 {
-                  title: "Gudang Drum & IBC Berstandar HSE",
-                  desc: "Sistem penyimpanan drum kimia dan tangki IBC yang rapi, bersih, dan berstandar safety tinggi untuk menjaga kestabilan kualitas material baku.",
+                  title: "Penyimpanan Aman Berstandar HSE",
+                  desc: "Fasilitas penyimpanan modern yang dirancang khusus untuk menjaga kestabilan sifat kimia material baku, kebersihan produk, serta kepatuhan penuh terhadap keselamatan lingkungan.",
                   img: "/images/drum_warehouse.png"
                 }
               ].map((fac, idx) => (

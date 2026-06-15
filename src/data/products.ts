@@ -5,6 +5,9 @@ export interface Product {
   chemicalFormula?: string;
   casNumber: string;
   category: string;
+  status?: "active" | "draft" | "archived";
+  seoMetaTitle?: string;
+  seoMetaDescription?: string;
   shortDescription: string;
   description: string;
   techSpecs: {
@@ -15,6 +18,7 @@ export interface Product {
     activeMatter?: string;
     packaging?: string;
   };
+  extraDetails?: Record<string, string | string[]>;
   applications: string[];
   downloads: {
     tds: string;
@@ -28,6 +32,86 @@ export const CATEGORIES = {
   INORGANIC: "Inorganic Chemicals",
   PIGMENTS: "Pigments & Fillers",
   FINE: "Fine Chemicals",
+  FOOD_INGREDIENTS: "Food Ingredients",
+  SWEETENERS: "Sweeteners",
+  NUTRITION: "Nutrition Ingredients",
+  VITAMINS: "Vitamins",
+  ENZYMES_STARCH_SWEETENERS: "Enzymes for Starch Sweeteners",
+  STARCH_MODIFIED: "Starch & Modified Starch",
+  BLENDED_SWEETENERS: "Blended Sweeteners",
+};
+
+type ProductSeed = {
+  name: string;
+  category: string;
+  group?: string;
+  prefix: string;
+  casNumber?: string;
+  appearance?: string;
+  packaging?: string;
+  description?: string;
+  applications?: string[];
+  extraDetails?: Record<string, string | string[]>;
+};
+
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/%/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+const createCatalogProduct = ({
+  name,
+  category,
+  group,
+  prefix,
+  casNumber = "N/A",
+  appearance = "Sesuai COA Standar",
+  packaging = "25kg bag / drum / IBC, subject to product grade",
+  description,
+  applications,
+  extraDetails,
+}: ProductSeed): Product => {
+  const productLine = group ? `${group} in ${category}` : category;
+
+  return {
+    id: `${prefix}-${slugify(name)}`,
+    name,
+    casNumber,
+    category,
+    status: "active",
+    seoMetaTitle: `${name} Supplier | ${category} - Pima Kimagro`,
+    seoMetaDescription: `Supplier ${name} untuk kebutuhan ${category.toLowerCase()} dengan dukungan dokumen TDS dan SDS dari Pima Kimagro Sejahtera.`,
+    shortDescription: `${name} for ${productLine.toLowerCase()} applications with specification support and technical documentation.`,
+    description:
+      description ||
+      `${name} is supplied as part of our ${category} portfolio for food, nutrition, starch, beverage, industrial, and formulation applications. Product grade, origin, and detailed specification are available by request based on customer requirements.`,
+    techSpecs: {
+      purity: "Sesuai COA Standar",
+      appearance,
+      density: "N/A",
+      pH: "N/A",
+      packaging,
+    },
+    extraDetails: {
+      ...(group ? { Series: group } : {}),
+      ...(extraDetails || {}),
+    },
+    applications:
+      applications ||
+      [
+        `${category} formulation`,
+        "Food and beverage manufacturing",
+        "Industrial processing",
+        "Custom product development",
+      ],
+    downloads: {
+      tds: `/downloads/${slugify(name)}_TDS.pdf`,
+      msds: `/downloads/${slugify(name)}_SDS.pdf`,
+    },
+  };
 };
 
 export const products: Product[] = [
@@ -1020,4 +1104,202 @@ export const products: Product[] = [
       msds: "/downloads/EDS_MSDS.pdf",
     },
   },
+  ...[
+    ...["Citric Acid Anhydrous", "Citric Acid Monohydrate", "Malic Acid", "Tartaric Acid", "Fumaric Acid", "Lactic Acid Liquid", "Trisodium Citrate", "Phosphoric Acid 85%"].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.FOOD_INGREDIENTS,
+        group: "Acid Regulators",
+        prefix: "food",
+        applications: ["pH control in food and beverage", "Acidity regulation", "Flavor balancing", "Process buffering"],
+      })
+    ),
+    ...["Potassium Sorbate", "Sodium Benzoate", "Calcium Propionate", "Sodium Propionate", "Nisin", "Natamycin", "Sodium Bicarbonate"].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.FOOD_INGREDIENTS,
+        group: "Preservatives",
+        prefix: "food",
+        applications: ["Shelf-life extension", "Bakery and dairy preservation", "Beverage and sauce production", "Food safety formulation"],
+      })
+    ),
+    ...["Sodium Alginate", "CMC", "Xanthan Gum", "Gelatin", "Guar Gum", "Pectin"].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.FOOD_INGREDIENTS,
+        group: "Thickeners",
+        prefix: "food",
+        applications: ["Viscosity control", "Texture and mouthfeel improvement", "Stabilization of emulsions and suspensions", "Sauce, dairy, bakery, and beverage systems"],
+      })
+    ),
+    ...[
+      "Allulose",
+      "Erythritol",
+      "Trehalose",
+      "Maltitol",
+      "Sorbitol Powder",
+      "Sorbitol Liquid",
+      "Xylitol",
+      "Lactitol",
+      "Aspartame",
+      "Sucralose",
+      "Saccharin Sodium",
+      "Sodium Cyclamate",
+      "Neotame",
+      "Acesulfame-K",
+      "Maltodextrin",
+      "Dextrose Monohydrate",
+      "Dextrose Anhydrous",
+    ].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.SWEETENERS,
+        prefix: "sweetener",
+        applications: ["Sugar reduction", "Beverage and confectionery formulation", "Bakery, dairy, and dessert systems", "Nutrition and functional food products"],
+      })
+    ),
+    ...[
+      "L-Cysteine Hydrochloride Monohydrate",
+      "Beta Carotene",
+      "BHT",
+      "Lysine HCL",
+      "Glycine",
+      "L-Carnitine HCL",
+      "L-Carnitine Tartrate",
+      "Creatine Monohydrate",
+      "Taurine",
+      "Coenzyme Q10",
+      "N-Acetyl L-Cysteine",
+      "L-Cysteine Base",
+      "BCAA 2:1:1",
+      "Methionine",
+      "Valine",
+      "Tryptophan",
+      "Isoleucine",
+    ].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.NUTRITION,
+        prefix: "nutrition",
+        applications: ["Dietary supplement production", "Functional food and beverage", "Sports nutrition", "Fortification premixes"],
+      })
+    ),
+    ...[
+      "Vitamin A",
+      "Vitamin B1 HCL",
+      "Vitamin B2",
+      "Vitamin B3",
+      "Vitamin B5",
+      "Vitamin B6",
+      "Vitamin B9",
+      "Vitamin B12",
+      "Vitamin D3",
+      "Vitamin E Oil",
+      "Vitamin H (Biotin)",
+      "Vitamin K2 MK7",
+      "Vitamin K3",
+      "Tocopherol",
+      "Inositol",
+      "Betaine HCL",
+      "Choline Chloride",
+      "D-Calcium Pantothenate",
+    ].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.VITAMINS,
+        prefix: "vitamin",
+        applications: ["Food fortification", "Supplement capsules, tablets, and powders", "Beverage premixes", "Nutrition and health ingredient blends"],
+      })
+    ),
+    ...[
+      "Grainzyme Plus",
+      "Grainzyme Yield",
+      "SQzyme HSAL",
+      "LiqueStar 220",
+      "LiqueStar 2.0",
+      "SQzyme BAL",
+      "SQzyme AGL",
+      "Fermentase L",
+      "Pulluzyme Pro",
+      "Pulluzyme Ultra",
+      "SQzyme BTA",
+      "SQzyme FAL",
+      "Debranzyme X",
+      "SQfiltrase",
+    ].map((name) =>
+      createCatalogProduct({
+        name,
+        category: CATEGORIES.ENZYMES_STARCH_SWEETENERS,
+        prefix: "enzyme",
+        appearance: "Liquid or powder enzyme preparation",
+        packaging: "25kg drum / carton or custom industrial pack",
+        applications: ["Glucose syrup production", "Maltose and fructose syrup processing", "Starch liquefaction and saccharification", "Starch sweetener process optimization"],
+        extraDetails: {
+          "Enzyme Type": "Starch processing enzyme preparation",
+          Dosage: "Application dependent; confirm through plant trial and supplier recommendation",
+          "Process Stage": "Liquefaction, saccharification, debranching, fermentation, or filtration depending on product selection",
+          Benefits: ["Improves conversion efficiency", "Supports stable processing", "Helps optimize yield and filtration", "Reduces process variability"],
+          Applications: ["Corn, tapioca, wheat, and rice starch sweetener production", "Glucose, maltose, and fructose syrup lines"],
+        },
+      })
+    ),
+    ...[
+      { name: "Corn Starch", eNumber: "N/A", description: "Native corn starch for food and industrial processing." },
+      { name: "Modified Starch", eNumber: "Varies by grade", description: "Modified starch portfolio for improved texture, stability, and process performance." },
+      { name: "Oxidized Starch (E1404)", eNumber: "E1404", description: "Oxidized starch with improved film-forming and viscosity properties." },
+      { name: "Acid Treated Starch (E1401)", eNumber: "E1401", description: "Acid treated starch designed for lower viscosity and improved gel strength." },
+      { name: "Hydroxypropyl Distarch Phosphate (E1442)", eNumber: "E1442", description: "Stabilized modified starch for heat, shear, and acid tolerance." },
+      { name: "Acetylated Distarch Phosphate (E1414)", eNumber: "E1414", description: "Modified starch with strong stability for food processing systems." },
+      { name: "Acetylated Distarch Adipate (E1422)", eNumber: "E1422", description: "Modified starch with freeze-thaw and processing stability." },
+      { name: "Phosphate Starch (E1412)", eNumber: "E1412", description: "Crosslinked starch for viscosity and texture stability." },
+      { name: "Acetate Starch (E1420)", eNumber: "E1420", description: "Acetylated starch for improved paste clarity and stability." },
+      { name: "Cationic Starch", eNumber: "N/A", description: "Industrial cationic starch for paper, textile, and binding applications." },
+    ].map((item) =>
+      createCatalogProduct({
+        name: item.name,
+        category: CATEGORIES.STARCH_MODIFIED,
+        prefix: "starch",
+        description: item.description,
+        appearance: "White to off-white powder",
+        packaging: "25kg bag / jumbo bag",
+        applications: ["Food texture and thickening systems", "Sauces, noodles, bakery, dairy, and convenience food", "Paper and textile processing", "Adhesive, binder, and industrial formulations"],
+        extraDetails: {
+          "E Number": item.eNumber,
+          "Product Description": item.description,
+          "Food Applications": ["Thickening", "Stabilization", "Texture control", "Moisture retention"],
+          "Industrial Applications": ["Paper making", "Textile sizing", "Adhesives", "Binder systems"],
+          Packaging: "25kg bag / jumbo bag",
+          "Storage Information": "Store sealed in a cool, dry, ventilated area away from moisture and direct sunlight.",
+        },
+      })
+    ),
+    ...[
+      { name: "FABH-02", group: "Trehalose Series", sweetness: "Balanced reduced-sugar sweetness" },
+      { name: "SSBH-02", group: "Trehalose Series", sweetness: "Balanced reduced-sugar sweetness" },
+      { name: "SSBH-01", group: "Trehalose Series", sweetness: "Balanced reduced-sugar sweetness" },
+      { name: "SSAH-01", group: "Trehalose Series", sweetness: "Balanced reduced-sugar sweetness" },
+      { name: "FACA-01", group: "Allulose Series", sweetness: "Low-calorie sugar-like sweetness" },
+      { name: "FACA-02", group: "Allulose Series", sweetness: "Low-calorie sugar-like sweetness" },
+      { name: "S1", group: "Allulose Series", sweetness: "Low-calorie sugar-like sweetness" },
+      { name: "S2", group: "Allulose Series", sweetness: "Low-calorie sugar-like sweetness" },
+      { name: "S3", group: "Allulose Series", sweetness: "Low-calorie sugar-like sweetness" },
+      { name: "FABC-01", group: "Erythritol Series", sweetness: "Clean reduced-calorie sweetness" },
+    ].map((item) =>
+      createCatalogProduct({
+        name: item.name,
+        category: CATEGORIES.BLENDED_SWEETENERS,
+        group: item.group,
+        prefix: "blend",
+        appearance: "Powder blend",
+        packaging: "20kg / 25kg bag or custom pack",
+        applications: ["Beverage and powdered drink mixes", "Confectionery and bakery", "Dairy, desserts, and sauces", "Low-sugar and reduced-calorie product development"],
+        extraDetails: {
+          "Sweetness Level": item.sweetness,
+          Ingredients: `${item.group.replace(" Series", "")}-based sweetener blend with supporting bulking and high-intensity sweetener components as required by grade.`,
+          "Product Features": ["Sugar reduction", "Good solubility", "Clean sweetness profile", "Formulation-ready blend"],
+          "Application Industries": ["Food and beverage", "Confectionery", "Bakery", "Nutrition products"],
+        },
+      })
+    ),
+  ],
 ];

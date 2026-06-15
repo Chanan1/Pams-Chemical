@@ -11,12 +11,11 @@ import {
   Shield,
   Clock,
   Award,
-  Globe,
-  Camera,
-  Link2,
-  Share2,
   Video,
   Music,
+  Share2,
+  Link2,
+  Camera,
 } from "lucide-react";
 
 export default function Footer() {
@@ -30,8 +29,8 @@ export default function Footer() {
           {/* Column 1: Company Profile & Core trust */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-9 h-9 rounded-lg bg-[#0A3663] flex items-center justify-center text-white">
-                <Globe className="w-5 h-5" />
+              <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center overflow-hidden">
+                <img src="/Logo/Logo.png" alt="PIMA Logo" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-xl font-bold text-[#1E293B] tracking-tight">Pima Kimagro</span>
             </div>
@@ -160,8 +159,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-2xl border border-[#E2E8F0] px-3 py-2 text-xs font-semibold text-slate-700 hover:border-[#0A3663] hover:bg-[#E9F2FF] transition-all duration-200"
                 >
-                  <Music className="w-4 h-4 text-[#0A3663]" />
-                  TikTok
+                  <Music className="w-4 h-4 text-[#000]" />
+                    TikTok
                 </a>
                 <a
                   href="https://www.facebook.com/profile.php?id=61590702000622"
@@ -189,15 +188,6 @@ export default function Footer() {
                 >
                   <Camera className="w-4 h-4 text-[#E1306C]" />
                   Instagram
-                </a>
-                <a
-                  href="https://www.youtube.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-2xl border border-[#E2E8F0] px-3 py-2 text-xs font-semibold text-slate-700 hover:border-[#0A3663] hover:bg-[#E9F2FF] transition-all duration-200"
-                >
-                  <Video className="w-4 h-4 text-[#FF0000]" />
-                  YouTube
                 </a>
               </div>
             </motion.div>

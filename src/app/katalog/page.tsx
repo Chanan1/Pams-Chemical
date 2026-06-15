@@ -61,9 +61,18 @@ function CatalogContent() {
 
   // Filter logic
   const filteredProducts = products.filter((product) => {
+    const extraSearchText = product.extraDetails
+      ? Object.entries(product.extraDetails)
+          .flatMap(([key, value]) => [key, ...(Array.isArray(value) ? value : [value])])
+          .join(" ")
+          .toLowerCase()
+      : "";
+
     const matchesSearch =
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      extraSearchText.includes(searchQuery.toLowerCase()) ||
       (product.chemicalFormula && product.chemicalFormula.toLowerCase().includes(searchQuery.toLowerCase()));
 
     const matchesCas = product.casNumber.toLowerCase().includes(casQuery.toLowerCase());
@@ -93,6 +102,13 @@ function CatalogContent() {
       case CATEGORIES.INORGANIC:
       case CATEGORIES.PIGMENTS:
       case CATEGORIES.FINE:
+      case CATEGORIES.FOOD_INGREDIENTS:
+      case CATEGORIES.SWEETENERS:
+      case CATEGORIES.NUTRITION:
+      case CATEGORIES.VITAMINS:
+      case CATEGORIES.ENZYMES_STARCH_SWEETENERS:
+      case CATEGORIES.STARCH_MODIFIED:
+      case CATEGORIES.BLENDED_SWEETENERS:
         return "bg-[#E9F2FF] text-[#0A3663] border-[#A7C7F0]";
       default:
         return "bg-slate-100 text-slate-700 border-slate-200";
@@ -111,6 +127,19 @@ function CatalogContent() {
         return "🎨";
       case CATEGORIES.FINE:
         return "🧪";
+      case CATEGORIES.FOOD_INGREDIENTS:
+        return "🥣";
+      case CATEGORIES.SWEETENERS:
+      case CATEGORIES.BLENDED_SWEETENERS:
+        return "◈";
+      case CATEGORIES.NUTRITION:
+        return "✚";
+      case CATEGORIES.VITAMINS:
+        return "●";
+      case CATEGORIES.ENZYMES_STARCH_SWEETENERS:
+        return "◇";
+      case CATEGORIES.STARCH_MODIFIED:
+        return "▧";
       default:
         return "⚗️";
     }
