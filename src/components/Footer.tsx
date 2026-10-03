@@ -130,12 +130,12 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-[#0A3663] shrink-0" />
-                <span>+62 896-1520-5771</span>
+                <span>+62 822 5140 2229</span>
               </li>
               <li className="flex items-center space-x-3">
                 <MessageSquare className="w-4 h-4 text-[#00A896] shrink-0" />
-                <a href="https://wa.me/6283809704439" target="_blank" rel="noopener noreferrer" className="hover:text-[#0A3663] text-[#00A896] font-semibold transition-colors duration-150">
-                  +62 838-0970-4439 (WA Sales)
+                <a href="https://wa.me/6282251402229" target="_blank" rel="noopener noreferrer" className="hover:text-[#0A3663] text-[#00A896] font-semibold transition-colors duration-150">
+                  +62 822 5140 2229 (WA Sales)
                 </a>
               </li>
               <li className="flex items-center space-x-3">

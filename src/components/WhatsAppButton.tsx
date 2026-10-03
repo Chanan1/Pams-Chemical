@@ -36,7 +36,7 @@ export default function WhatsAppButton() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "6289615205771";
+    const phoneNumber = "6282251402229";
     const text = encodeURIComponent(
       "Halo Pima Kimagro Sejahtera, saya tertarik untuk meminta penawaran harga bahan baku kimia industri. Mohon info pricelist dan katalog terbaru. Terima kasih."
     );

@@ -63,7 +63,7 @@ export default function QuoteForm({ productName }: { productName: string }) {
       setShowSuccess(true);
 
       // Structure beautiful WhatsApp text
-      const waNumber = "6283809704439";
+      const waNumber = "6282251402229";
       const message = `Halo Pima Kimagro Sejahtera (Sales Center),
 
 Saya ingin mengajukan Permintaan Penawaran Harga resmi. Berikut detail kebutuhan bahan baku industri kami:

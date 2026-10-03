@@ -91,7 +91,7 @@ function ContactFormContent() {
       setShowSuccess(true);
 
       // Structure beautiful WhatsApp text
-      const waNumber = "6281234567890";
+      const waNumber = "6282251402229";
       const typeLabels: Record<string, string> = {
         general: "Pertanyaan Umum",
         quote: "Minta Penawaran Harga",
@@ -161,12 +161,12 @@ Mohon dapat dihubungi kembali via email atau WhatsApp sesegera mungkin. Terima k
                 <div className="space-y-1">
                   <h4 className="font-bold text-sm text-[#1E293B]">Telepon Kantor</h4>
                   <p className="text-xs text-slate-600">
-                    +62 896-1520-5771
+                    +62 822 5140 2229
                   </p>
                   <p className="text-xs font-bold flex items-center space-x-1 mt-1">
                     <MessageSquare className="w-3.5 h-3.5" />
-                    <a href="https://wa.me/6283809704439" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: '#00A896' }}>
-                      +62 838-0970-4439 (WhatsApp Sales)
+                    <a href="https://wa.me/6282251402229" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: '#00A896' }}>
+                      +62 822 5140 2229 (WhatsApp Sales)
                     </a>
                   </p>
                 </div>

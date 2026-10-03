@@ -537,7 +537,7 @@ export default function Home() {
               Request Quotation Form
             </Link>
             <a
-              href="https://wa.me/6283809704439?text=Halo%20Pima%20Kimagro%20Sejahtera%2C%20saya%20ingin%20konsultasi%20harga%20dan%20stok%20bahan%20kimia%20industri."
+              href="https://wa.me/6282251402229?text=Halo%20Pima%20Kimagro%20Sejahtera%2C%20saya%20ingin%20konsultasi%20harga%20dan%20stok%20bahan%20kimia%20industri."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-[#00A896] hover:bg-[#008e80] text-white font-extrabold rounded-xl text-center flex items-center justify-center space-x-2.5 active:scale-98 transition-all shadow-md shadow-[#00A896]/20"
